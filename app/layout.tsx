@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { RootedProvider } from "@/context/rooted-context";
 import "./globals.css";
 
@@ -42,6 +43,7 @@ export default function RootLayout({
         className={`${cormorant.variable} ${dmSans.variable} font-sans antialiased`}
       >
         <RootedProvider>{children}</RootedProvider>
+        <Analytics />
       </body>
     </html>
   );
